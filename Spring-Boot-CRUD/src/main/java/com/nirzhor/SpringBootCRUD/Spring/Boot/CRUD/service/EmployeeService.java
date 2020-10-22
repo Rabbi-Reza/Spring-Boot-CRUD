@@ -1,6 +1,7 @@
 package com.nirzhor.SpringBootCRUD.Spring.Boot.CRUD.service;
 
 import com.nirzhor.SpringBootCRUD.Spring.Boot.CRUD.model.Employee;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -10,5 +11,9 @@ public interface EmployeeService {
     void saveEmployee(Employee employee);
     Employee getEmployeeById(long id);
     void deleteEmployeeById(long id);
+
+    Page<Employee> findPaginated(int pageNo, int pageSize, String sort, String sortDirection);
+
+
 
 }
